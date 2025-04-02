@@ -27,7 +27,7 @@ spec:
           pathType: {{ .pathType }} # Access pathType from the current path
           backend:
             service:
-              name: {{ $.Values.ingress.serviceName }} #Important to use $.Values here to access the global values.
+              name: nginx
               port:
                 name: {{ default "http" (.servicePort) }}
         {{- end }}
