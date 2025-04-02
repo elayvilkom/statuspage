@@ -2234,14 +2234,24 @@ server:
     annotations: 
       #nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
       # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:992382545251:certificate/0724d29a-a52d-4ce3-8823-ac73e495350a
+      alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect","RedirectConfig": {"Protocol": "HTTPS","Port": "443","StatusCode": "HTTP_301"}}'
+      alb.ingress.kubernetes.io/load-balancer-name: "en-loadbalancer"
+      alb.ingress.kubernetes.io/backend-protocol: HTTPS
+      alb.ingress.kubernetes.io/target-type: "ip"
+      alb.ingress.kubernetes.io/group.name: "en-statuspage"
+      alb.ingress.kubernetes.io/group.order: '1'
+      alb.ingress.kubernetes.io/success-codes: "200-499"
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
 
     # -- Defines which ingress controller will implement the resource
-    ingressClassName: "nginx"
+    ingressClassName: alb
 
     # -- Argo CD server hostname
     # @default -- `""` (defaults to global.domain)
-    hostname: "noa-argocd.local"
+    hostname: argo.en-statuspage.com
 
     # -- The path to Argo CD server
     path: /
