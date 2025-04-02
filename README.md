@@ -28,8 +28,6 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ## Prerequisites
 * git installed
 * terraform installed
-* aws cli installed 
-* eksctl installed
 ---------------------------------------------------------------------------------------------------------------------  
 **Project Structure**
 
