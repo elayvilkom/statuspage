@@ -1,0 +1,42 @@
+{{- if (.Values.ingress).enabled -}}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "aws-load-balancer-controller.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+{{- if .Values.ingress.additionalLabels }}
+{{ toYaml .Values.ingress.additionalLabels | indent 4 }}
+{{- end }}
+{{- if .Values.ingress.annotations }}
+  annotations:
+{{ toYaml .Values.ingress.annotations | indent 4 }}
+{{- end }}
+spec:
+{{- if .Values.ingress.ingressClassName }}
+  ingressClassName: {{ .Values.ingress.ingressClassName }}
+{{- end}}
+  rules:
+    {{- range .Values.ingress.hosts }}
+    - host: {{ $.Values.ingress.host }}
+      http:
+        paths:
+        {{- if .paths }}
+        {{- range .paths }}
+        - path: {{ .path }}
+          pathType: {{ .pathType }} # Access pathType from the current path
+          backend:
+            service:
+              name: {{ $.Values.ingress.serviceName }} #Important to use $.Values here to access the global values.
+              port:
+                name: {{ default "http" (.servicePort) }}
+        {{- end }}
+        {{- else }}
+        {{ fail "Specify paths for ingress host, check values.yaml" }}
+        {{- end }}
+    {{- end -}}
+  {{- if .Values.ingress.tls }}
+  tls:
+{{ .Values.ingress.tls | toYaml | indent 4 }}
+  {{- end -}}
+{{- end -}}
