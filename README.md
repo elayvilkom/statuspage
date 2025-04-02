@@ -40,6 +40,7 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ```bash
     git clone https://
     ```
+----------------------------------------------------------------------------------------------------------------------
 * Activate terraform -Inside of terraform diractory 
 ```bash
     terraform apply
