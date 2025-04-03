@@ -48,7 +48,7 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
     git clone https://github.com/noahaviv/statuspage.git
 ```
 
-* Activate terraform -Inside of terraform diractory 
+* Activate terraform -Inside of terraform directory 
 ```bash
     terraform apply
 ```
