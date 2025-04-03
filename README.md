@@ -1,6 +1,6 @@
 # Statuspage Application Deployment with ArgoCD and Terraform
 
-This project deploys a comprehensive statuspage application on an AWS EKS cluster, leveraging ArgoCD for continuous delivery and Terraform for infrastructure provisioning. It provides a robust, transparent system for communicating the health and availability of your services.
+This project deploys a comprehensive statuspage application on an AWS EKS cluster, leveraging ArgoCD for continuous delivery and Terraform for infrastructure provisioning. It provides a transparent system for communicating the health and availability of your services.
 ---------------------------------------------------------------------------------------------------------------------
 ## Components:
 
