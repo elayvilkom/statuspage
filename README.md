@@ -28,6 +28,9 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ## Prerequisites
 * git installed
 * terraform installed
+* aws cli
+* helm
+* kubectl
 ---------------------------------------------------------------------------------------------------------------------  
 **Project Structure**
 * Terraform deployment-
@@ -47,11 +50,10 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ```bash
     git clone https://github.com/noahaviv/statuspage.git
 ```
-
 * Activate terraform -Inside of terraform directory 
 ```bash
     terraform apply
 ```
-
+* 
 ---------------------------------------------------------------------------------------------------------------------
 
