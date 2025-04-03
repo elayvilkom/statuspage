@@ -31,16 +31,16 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ---------------------------------------------------------------------------------------------------------------------  
 **Project Structure**
 * Terraform deployment-
-- EKS Cluster
-- VPC
-- ECR
-- RDS postgresql
-- Elasticache Redis
+   - EKS Cluster
+   - VPC
+   - ECR
+   - RDS postgresql
+   - Elasticache Redis
 * Helm Charts deployment-
-- kube prometheus stack + Grafana
-- ArgoCD application
-- Statuspage application
-- AWS LoadBalancer Controller
+   - kube prometheus stack + Grafana
+   - ArgoCD application
+   - Statuspage application
+   - AWS LoadBalancer Controller
 ---------------------------------------------------------------------------------------------------------------------
 ## Deployment Steps 
 * Clone our git repository
