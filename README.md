@@ -30,18 +30,28 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 * terraform installed
 ---------------------------------------------------------------------------------------------------------------------  
 **Project Structure**
-
-... (rest of your project structure section)
+* Terraform deployment-
+- EKS Cluster
+- VPC
+- ECR
+- RDS postgresql
+- Elasticache Redis
+* Helm Charts deployment-
+- kube prometheus stack + Grafana
+- ArgoCD application
+- Statuspage application
+- AWS LoadBalancer Controller
 ---------------------------------------------------------------------------------------------------------------------
 ## Deployment Steps 
 * Clone our git repository
 ```bash
-    git clone https://
+    git clone https://github.com/noahaviv/statuspage.git
 ```
 
 * Activate terraform -Inside of terraform diractory 
 ```bash
     terraform apply
 ```
+
 ---------------------------------------------------------------------------------------------------------------------
 
