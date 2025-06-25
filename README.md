@@ -54,6 +54,8 @@ This project deploys a comprehensive statuspage application on an AWS EKS cluste
 ```bash
     terraform apply
 ```
-* 
+*  
 ---------------------------------------------------------------------------------------------------------------------
+[Drawing 1 (2) (2).pdf](https://github.com/user-attachments/files/20904418/Drawing.1.2.2.pdf)
+
 
